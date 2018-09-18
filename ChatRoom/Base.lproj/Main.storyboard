@@ -9,19 +9,103 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ChatRoom" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="ChatRoom" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OfT-ZW-WHj">
+                                <rect key="frame" x="19" y="139.5" width="337.5" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K5E-Mm-6r8">
+                                <rect key="frame" x="19" y="191" width="337.5" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat Room" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSd-tp-A7F">
+                                <rect key="frame" x="127" y="71" width="121" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repeat password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hl1-df-jyV">
+                                <rect key="frame" x="19" y="242.5" width="337.5" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6h-Md-gtz">
+                                <rect key="frame" x="19" y="309.5" width="150" height="33.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196078430000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gZf-Jp-d8o"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IFq-dw-vca">
+                                <rect key="frame" x="206.5" y="309.5" width="150" height="33.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196078430000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="register:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lWa-a2-CrC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="fSd-tp-A7F" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.25" id="0bb-cI-vzN"/>
+                            <constraint firstItem="Hl1-df-jyV" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.75" id="1i8-mR-dGq"/>
+                            <constraint firstItem="N6h-Md-gtz" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.95" id="3HR-lN-e8h"/>
+                            <constraint firstItem="N6h-Md-gtz" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" multiplier="0.5" id="42q-hu-ot0"/>
+                            <constraint firstItem="N6h-Md-gtz" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" id="C8L-nm-Xgz"/>
+                            <constraint firstItem="Hl1-df-jyV" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="Gn5-PZ-QBM"/>
+                            <constraint firstItem="OfT-ZW-WHj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="HNq-Ve-O9h"/>
+                            <constraint firstItem="Hl1-df-jyV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="J4u-KA-dtw"/>
+                            <constraint firstItem="fSd-tp-A7F" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="MrE-VZ-Mtx"/>
+                            <constraint firstItem="K5E-Mm-6r8" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="SAT-Vy-azO"/>
+                            <constraint firstItem="IFq-dw-vca" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.95" id="Se2-Tg-4y7"/>
+                            <constraint firstItem="IFq-dw-vca" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" id="UNF-M0-TCP"/>
+                            <constraint firstItem="IFq-dw-vca" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.05" id="Yd2-tE-3pE"/>
+                            <constraint firstItem="N6h-Md-gtz" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.05" id="Yey-E9-iNg"/>
+                            <constraint firstItem="OfT-ZW-WHj" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.45" id="dqA-Me-czX"/>
+                            <constraint firstItem="K5E-Mm-6r8" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.6" id="etW-Iq-78e"/>
+                            <constraint firstItem="K5E-Mm-6r8" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="mLz-WL-Tum"/>
+                            <constraint firstItem="IFq-dw-vca" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" multiplier="1.5" id="oEq-Ak-o9K"/>
+                            <constraint firstItem="OfT-ZW-WHj" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="tAW-2A-FCO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="lNP-WM-Sgf" appends="YES" id="32I-e2-mHJ"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="OfT-ZW-WHj" id="Tyc-gZ-Op3"/>
+                        <outlet property="pwdTextField" destination="K5E-Mm-6r8" id="pRF-BR-MCe"/>
+                        <outlet property="repeadPwdTextField" destination="Hl1-df-jyV" id="3zF-bt-KbI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="lNP-WM-Sgf">
+                    <connections>
+                        <action selector="backgroundTap:" destination="BYZ-38-t0r" id="EaI-lr-im6"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="40.799999999999997" y="26.53673163418291"/>
         </scene>
     </scenes>
 </document>
