@@ -68,3 +68,8 @@ fastlane/screenshots/**/*.png
 fastlane/test_output
 **/.DS_Store
 .idea/
+
+#CocoaPods
+Pods
+!Podfile
+!Podfile.lock
