@@ -23,12 +23,20 @@ class WelcomeViewController: UIViewController {
 
   // Mark: - Actions
   @IBAction func login(_ sender: UIButton) {
+    disMissKeyboard()
   }
   
   @IBAction func register(_ sender: UIButton) {
+    disMissKeyboard()
   }
   
   @IBAction func backgroundTap(_ sender: Any) {
+    disMissKeyboard()
+  }
+  
+  // MARK: - Helper
+  func disMissKeyboard() {
+    self.view.endEditing(true)
   }
 }
 
