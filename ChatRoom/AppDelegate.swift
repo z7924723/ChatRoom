@@ -7,15 +7,32 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
-
+  var autoListener: AuthStateDidChangeListenerHandle?
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+    
+    FirebaseApp.configure()
+    
+    // Auto Login
+    autoListener = Auth.auth().addStateDidChangeListener({ (auth, user) in
+      Auth.auth().removeStateDidChangeListener(self.autoListener!)
+      
+      if user != nil {
+        if UserDefaults.standard.object(forKey: kCURRENTUSER) != nil {
+          DispatchQueue.main.async {
+            self.goToChatRoom()
+          }
+        }
+      }
+    })
+    
     return true
   }
 
@@ -41,6 +58,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   }
 
-
+  // MARk: - goToChatRoom
+  func goToChatRoom() {
+    NotificationCenter.default.post(name: .USER_DID_LOGIN_NOTIFICATION, object: nil, userInfo: [kUSERID: FUser.currentId()])
+    
+    let mainView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainApplication") as! UITabBarController
+    
+    self.window?.rootViewController = mainView
+  }
+  
 }
 
