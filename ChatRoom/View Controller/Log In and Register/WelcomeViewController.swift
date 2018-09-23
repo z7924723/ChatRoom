@@ -16,7 +16,7 @@ class WelcomeViewController: UIViewController {
   @IBOutlet weak var pwdTextField: UITextField!
   @IBOutlet weak var repeadPwdTextField: UITextField!
   
-  // Mark: - View Life Cycle
+  // MARK: - View Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.

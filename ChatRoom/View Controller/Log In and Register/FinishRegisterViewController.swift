@@ -23,7 +23,7 @@ class FinishRegisterViewController: UIViewController {
   var password: String!
   var avatorImage: UIImage?
   
-  // MARk: - View Life Cycle
+  // MARK: - View Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
     

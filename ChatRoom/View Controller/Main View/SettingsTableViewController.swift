@@ -11,7 +11,7 @@ import UIKit
 class SettingsTableViewController: UITableViewController {
   
   
-  // MARk: - View Life Cycle
+  // MARK: - View Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
   }
