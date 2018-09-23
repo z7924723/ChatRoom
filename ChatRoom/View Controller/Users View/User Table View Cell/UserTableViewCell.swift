@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol UserTableViewCellDelegate {
+  func didTappedAvatorImage(indexPath: IndexPath)
+}
+
 class UserTableViewCell: UITableViewCell {
   
   // MARK: - Porperties
@@ -15,6 +19,7 @@ class UserTableViewCell: UITableViewCell {
   @IBOutlet weak var fullNameLabel: UILabel!
   
   var indexPath: IndexPath!
+  var delegate: UserTableViewCellDelegate?
   
   let tapGestureRecognizer = UITapGestureRecognizer()
   
@@ -47,6 +52,6 @@ class UserTableViewCell: UITableViewCell {
   }
   
   @objc func avatorTap() {
-    print("avator tap at \(indexPath)")
+    delegate?.didTappedAvatorImage(indexPath: indexPath)
   }
 }

@@ -10,6 +10,7 @@
 		3F4B743DBED9303550D583A2 /* Pods_ChatRoom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8809D0B093F01B7AE303ED9 /* Pods_ChatRoom.framework */; };
 		703057AE2156806E00FEEAB4 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703057AD2156806E00FEEAB4 /* UsersTableViewController.swift */; };
 		703057B02156916800FEEAB4 /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703057AF2156916800FEEAB4 /* ChatsViewController.swift */; };
+		703057B621573A8200FEEAB4 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703057B521573A8200FEEAB4 /* ProfileTableViewController.swift */; };
 		70801C7121510F070025DBD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70801C7021510F070025DBD5 /* AppDelegate.swift */; };
 		70801C7321510F070025DBD5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70801C7221510F070025DBD5 /* WelcomeViewController.swift */; };
 		70801C7621510F070025DBD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70801C7421510F070025DBD5 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		6824402245DCE93B9886FF3C /* Pods-ChatRoom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatRoom.release.xcconfig"; path = "Target Support Files/Pods-ChatRoom/Pods-ChatRoom.release.xcconfig"; sourceTree = "<group>"; };
 		703057AD2156806E00FEEAB4 /* UsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
 		703057AF2156916800FEEAB4 /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
+		703057B521573A8200FEEAB4 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		70801C6D21510F070025DBD5 /* ChatRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70801C7021510F070025DBD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70801C7221510F070025DBD5 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -72,14 +74,40 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		703057B3215739F800FEEAB4 /* Chats View */ = {
+			isa = PBXGroup;
+			children = (
+				703057AF2156916800FEEAB4 /* ChatsViewController.swift */,
+			);
+			path = "Chats View";
+			sourceTree = "<group>";
+		};
+		703057B421573A1100FEEAB4 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				70801C9F2153EE550025DBD5 /* SettingsTableViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		703057B721580A4E00FEEAB4 /* Users View */ = {
+			isa = PBXGroup;
+			children = (
+				703057AD2156806E00FEEAB4 /* UsersTableViewController.swift */,
+				703057B521573A8200FEEAB4 /* ProfileTableViewController.swift */,
+				70801CA1215410CE0025DBD5 /* User Table View Cell */,
+			);
+			path = "Users View";
+			sourceTree = "<group>";
+		};
 		70801C6421510F070025DBD5 = {
 			isa = PBXGroup;
 			children = (
-				70801C8D21523C0C0025DBD5 /* Default-568h@2x.png */,
 				70801C6F21510F070025DBD5 /* ChatRoom */,
-				70801C6E21510F070025DBD5 /* Products */,
-				A12D746DBA3941968483A29E /* Pods */,
+				70801C8D21523C0C0025DBD5 /* Default-568h@2x.png */,
 				2681F1B55C33E86AC6DBEF75 /* Frameworks */,
+				A12D746DBA3941968483A29E /* Pods */,
+				70801C6E21510F070025DBD5 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,8 +146,10 @@
 		70801C87215237DA0025DBD5 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				70801C9E2153EE090025DBD5 /* Main View */,
-				70801C9D2153EDA20025DBD5 /* Log In and Register */,
+				703057B3215739F800FEEAB4 /* Chats View */,
+				703057B421573A1100FEEAB4 /* Settings */,
+				703057B721580A4E00FEEAB4 /* Users View */,
+				70801C9D2153EDA20025DBD5 /* Welcome VIew */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -159,32 +189,21 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		70801C9D2153EDA20025DBD5 /* Log In and Register */ = {
+		70801C9D2153EDA20025DBD5 /* Welcome VIew */ = {
 			isa = PBXGroup;
 			children = (
 				70801C7221510F070025DBD5 /* WelcomeViewController.swift */,
 				70801C982152C4470025DBD5 /* FinishRegisterViewController.swift */,
 			);
-			path = "Log In and Register";
+			path = "Welcome VIew";
 			sourceTree = "<group>";
 		};
-		70801C9E2153EE090025DBD5 /* Main View */ = {
-			isa = PBXGroup;
-			children = (
-				70801CA1215410CE0025DBD5 /* TableView Cell */,
-				70801C9F2153EE550025DBD5 /* SettingsTableViewController.swift */,
-				703057AD2156806E00FEEAB4 /* UsersTableViewController.swift */,
-				703057AF2156916800FEEAB4 /* ChatsViewController.swift */,
-			);
-			path = "Main View";
-			sourceTree = "<group>";
-		};
-		70801CA1215410CE0025DBD5 /* TableView Cell */ = {
+		70801CA1215410CE0025DBD5 /* User Table View Cell */ = {
 			isa = PBXGroup;
 			children = (
 				70801CA2215411090025DBD5 /* UserTableViewCell.swift */,
 			);
-			path = "TableView Cell";
+			path = "User Table View Cell";
 			sourceTree = "<group>";
 		};
 		A12D746DBA3941968483A29E /* Pods */ = {
@@ -346,6 +365,7 @@
 				70801C9C215392DD0025DBD5 /* Notification.swift in Sources */,
 				70801C94215269970025DBD5 /* CollectionReference.swift in Sources */,
 				70801C9021523D1C0025DBD5 /* Constants.swift in Sources */,
+				703057B621573A8200FEEAB4 /* ProfileTableViewController.swift in Sources */,
 				703057AE2156806E00FEEAB4 /* UsersTableViewController.swift in Sources */,
 				70801C9721526BA80025DBD5 /* Helper.swift in Sources */,
 				703057B02156916800FEEAB4 /* ChatsViewController.swift in Sources */,

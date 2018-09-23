@@ -79,6 +79,8 @@ class UsersTableViewController: UITableViewController {
     }
     
     cell.generateCellWith(fuser: user, indexPath: indexPath)
+    cell.delegate = self
+    
     return cell
     
   }
@@ -109,7 +111,6 @@ class UsersTableViewController: UITableViewController {
     
   }
 
-  
   // MARk: - Actions
   @IBAction func segmentValueChanged(_ sender: UISegmentedControl) {
     
@@ -147,18 +148,6 @@ class UsersTableViewController: UITableViewController {
     ProgressHUD.show()
     
     let query: Query = queryFrom(filter: filter)
-//    var query: Query!
-    
-//    switch filter {
-//    case kCITY:
-//      query = reference(.User).whereField(kCITY, isEqualTo: FUser.currentUser()!.city).order(by: kFIRSTNAME, descending: false)
-//
-//    case kCOUNTRY:
-//      query = reference(.User).whereField(kCOUNTRY, isEqualTo: FUser.currentUser()!.country).order(by: kFIRSTNAME, descending: false)
-//
-//    default:
-//      query = reference(.User).order(by: kFIRSTNAME, descending: false)
-//    }
     
     query.getDocuments { (snapshot, error) in
       self.allUsers = []
@@ -255,6 +244,28 @@ extension UsersTableViewController: UISearchResultsUpdating {
       self.allUsersGroupped[firstCharString]?.append(currentUser)
     }
     
+  }
+  
+}
+
+extension UsersTableViewController: UserTableViewCellDelegate {
+  
+  func didTappedAvatorImage(indexPath: IndexPath) {
+    let profileVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileTableView") as! ProfileTableViewController
+    
+    var user: FUser
+    
+    if searchController.isActive && searchController.searchBar.text != "" {
+      user = filterUsers[indexPath.row]
+    } else {
+      let sectionTitle = self.sectionTitleList[indexPath.section]
+      let users = self.allUsersGroupped[sectionTitle]
+      
+      user = users![indexPath.row]
+    }
+    
+    profileVC.user = user
+    self.navigationController?.pushViewController(profileVC, animated: true)
   }
   
 }
