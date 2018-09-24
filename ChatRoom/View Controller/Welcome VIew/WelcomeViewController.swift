@@ -22,7 +22,7 @@ class WelcomeViewController: UIViewController {
     // Do any additional setup after loading the view, typically from a nib.
   }
 
-  // MARk: - Navigation
+  // MARK: - Navigation
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "welcomeToFinishReg" {
       let vc = segue.destination as! FinishRegisterViewController

@@ -27,9 +27,7 @@ class UserTableViewCell: UITableViewCell {
   override func awakeFromNib() {
     super.awakeFromNib()
     
-    tapGestureRecognizer.addTarget(self, action: #selector(self.avatorTap))
-    avatorImage.isUserInteractionEnabled = true
-    avatorImage.addGestureRecognizer(tapGestureRecognizer)
+    configAvatorTapGesture()
   }
   
   override func setSelected(_ selected: Bool, animated: Bool) {
@@ -49,6 +47,12 @@ class UserTableViewCell: UITableViewCell {
         }
       }
     }
+  }
+  
+  func configAvatorTapGesture() {
+    tapGestureRecognizer.addTarget(self, action: #selector(self.avatorTap))
+    avatorImage.isUserInteractionEnabled = true
+    avatorImage.addGestureRecognizer(tapGestureRecognizer)
   }
   
   @objc func avatorTap() {

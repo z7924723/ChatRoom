@@ -110,8 +110,29 @@ class UsersTableViewController: UITableViewController {
     return index
     
   }
+  
+  // MARK: - Table view delegate
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    tableView.deselectRow(at: indexPath, animated: true)
+    
+    // Filter user from search
+    var user: FUser
+    
+    if searchController.isActive && searchController.searchBar.text != "" {
+      user = filterUsers[indexPath.row]
+    } else {
+      let sectionTitle = self.sectionTitleList[indexPath.section]
+      let users = self.allUsersGroupped[sectionTitle]
+      
+      user = users![indexPath.row]
+    }
+    
+    startPrivateChat(user1: FUser.currentUser()!, user2: user)
+    
+  }
 
-  // MARk: - Actions
+  // MARK: - Actions
   @IBAction func segmentValueChanged(_ sender: UISegmentedControl) {
     
     switch sender.selectedSegmentIndex {

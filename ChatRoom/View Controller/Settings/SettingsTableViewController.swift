@@ -28,7 +28,7 @@ class SettingsTableViewController: UITableViewController {
     return 3
   }
   
-  // MARk: - Actions
+  // MARK: - Actions
   @IBAction func logOutButton(_ sender: UIButton) {
     FUser.logOutCurrentUser { (success) in
       if success {

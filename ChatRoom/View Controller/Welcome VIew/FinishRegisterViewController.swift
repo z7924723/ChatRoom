@@ -29,7 +29,7 @@ class FinishRegisterViewController: UIViewController {
     
   }
   
-  // MARk: - Actions
+  // MARK: - Actions
   @IBAction func cancelButton(_ sender: UIButton) {
     disMissKeyboard()
     cleanTextFields()

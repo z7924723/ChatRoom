@@ -54,7 +54,7 @@ class ProfileTableViewController: UITableViewController {
     
   }
   
-  // MARk: - Actions
+  // MARK: - Actions
   @IBAction func callButtonPressed(_ sender: UIButton) {
   }
   

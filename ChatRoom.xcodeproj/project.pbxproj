@@ -11,6 +11,8 @@
 		703057AE2156806E00FEEAB4 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703057AD2156806E00FEEAB4 /* UsersTableViewController.swift */; };
 		703057B02156916800FEEAB4 /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703057AF2156916800FEEAB4 /* ChatsViewController.swift */; };
 		703057B621573A8200FEEAB4 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703057B521573A8200FEEAB4 /* ProfileTableViewController.swift */; };
+		703057B921580CAE00FEEAB4 /* Recent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703057B821580CAE00FEEAB4 /* Recent.swift */; };
+		703057BB2158B46700FEEAB4 /* RecentChatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703057BA2158B46700FEEAB4 /* RecentChatsTableViewCell.swift */; };
 		70801C7121510F070025DBD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70801C7021510F070025DBD5 /* AppDelegate.swift */; };
 		70801C7321510F070025DBD5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70801C7221510F070025DBD5 /* WelcomeViewController.swift */; };
 		70801C7621510F070025DBD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70801C7421510F070025DBD5 /* Main.storyboard */; };
@@ -33,6 +35,8 @@
 		703057AD2156806E00FEEAB4 /* UsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
 		703057AF2156916800FEEAB4 /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
 		703057B521573A8200FEEAB4 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		703057B821580CAE00FEEAB4 /* Recent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recent.swift; sourceTree = "<group>"; };
+		703057BA2158B46700FEEAB4 /* RecentChatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentChatsTableViewCell.swift; sourceTree = "<group>"; };
 		70801C6D21510F070025DBD5 /* ChatRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70801C7021510F070025DBD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70801C7221510F070025DBD5 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				703057AF2156916800FEEAB4 /* ChatsViewController.swift */,
+				703057BA2158B46700FEEAB4 /* RecentChatsTableViewCell.swift */,
 			);
 			path = "Chats View";
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 				70801C93215269970025DBD5 /* CollectionReference.swift */,
 				70801C8A21523A440025DBD5 /* Configuration.swift */,
 				70801C8F21523D1C0025DBD5 /* Constants.swift */,
+				703057B821580CAE00FEEAB4 /* Recent.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -366,7 +372,9 @@
 				70801C94215269970025DBD5 /* CollectionReference.swift in Sources */,
 				70801C9021523D1C0025DBD5 /* Constants.swift in Sources */,
 				703057B621573A8200FEEAB4 /* ProfileTableViewController.swift in Sources */,
+				703057BB2158B46700FEEAB4 /* RecentChatsTableViewCell.swift in Sources */,
 				703057AE2156806E00FEEAB4 /* UsersTableViewController.swift in Sources */,
+				703057B921580CAE00FEEAB4 /* Recent.swift in Sources */,
 				70801C9721526BA80025DBD5 /* Helper.swift in Sources */,
 				703057B02156916800FEEAB4 /* ChatsViewController.swift in Sources */,
 				70801CA02153EE550025DBD5 /* SettingsTableViewController.swift in Sources */,

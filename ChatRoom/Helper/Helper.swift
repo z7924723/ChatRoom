@@ -60,7 +60,6 @@ func timeElapsed(date: Date) -> String {
   
   var elapsed: String?
   
-  
   if (seconds < 60) {
     elapsed = "Just now"
   } else if (seconds < 60 * 60) {

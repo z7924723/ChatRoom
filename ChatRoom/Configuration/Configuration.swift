@@ -68,7 +68,7 @@ class FUser {
     pushId = _dictionary[kPUSHID] as? String
     
     if let created = _dictionary[kCREATEDAT] {
-      if (created as! String).count != 14 {
+      if (created as! String).count != dateLength {
         createdAt = Date()
       } else {
         createdAt = dateFormatter().date(from: created as! String)!
@@ -78,7 +78,7 @@ class FUser {
     }
     
     if let updateded = _dictionary[kUPDATEDAT] {
-      if (updateded as! String).count != 14 {
+      if (updateded as! String).count != dateLength {
         updatedAt = Date()
       } else {
         updatedAt = dateFormatter().date(from: updateded as! String)!

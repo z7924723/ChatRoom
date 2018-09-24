@@ -58,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   }
 
-  // MARk: - goToChatRoom
+  // MARK: - goToChatRoom
   func goToChatRoom() {
     NotificationCenter.default.post(name: .USER_DID_LOGIN_NOTIFICATION, object: nil, userInfo: [kUSERID: FUser.currentId()])
     
