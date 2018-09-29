@@ -71,14 +71,15 @@ class ProfileTableViewController: UITableViewController {
       currentBlockIds.append(user!.objectId)
     }
     
-    updateCurrentUserInFirestore(withValues: [kBLOCKEDUSERID : currentBlockIds]) { (error) in
+    updateCurrentUserInFirestore(withValues: [kBLOCKEDUSERID : currentBlockIds]) {
+      [weak self] (error) in
       
       if error != nil {
         print("Block user error: \(error?.localizedDescription)")
         return
       }
       
-      self.updateBlockStatus()
+      self!.updateBlockStatus()
       
     }
     
@@ -93,9 +94,9 @@ class ProfileTableViewController: UITableViewController {
       
       updateBlockStatus()
       
-      imageFromData(pictureData: user!.avatar) { (avatorImage) in
+      imageFromData(pictureData: user!.avatar) { [weak self] (avatorImage) in
         if avatorImage != nil {
-          self.avatorImage.image = avatorImage!.circleMasked
+          self!.avatorImage.image = avatorImage!.circleMasked
         }
       }
     }

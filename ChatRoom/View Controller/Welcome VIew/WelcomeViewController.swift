@@ -64,13 +64,13 @@ class WelcomeViewController: UIViewController {
   func loginUser() {
     ProgressHUD.show("Login...")
     
-    FUser.loginUserWith(email: emailTextField.text!, password: pwdTextField.text!) { (error) in
+    FUser.loginUserWith(email: emailTextField.text!, password: pwdTextField.text!) { [weak self] (error) in
       if error != nil {
         ProgressHUD.show(error?.localizedDescription)
         return
       }
       ProgressHUD.dismiss()
-      self.goToChatRoom()
+      self!.goToChatRoom()
     }
   }
   

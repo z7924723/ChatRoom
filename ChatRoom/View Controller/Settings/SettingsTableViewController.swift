@@ -19,20 +19,18 @@ class SettingsTableViewController: UITableViewController {
   // MARK: - Table view data source
   
   override func numberOfSections(in tableView: UITableView) -> Int {
-    // #warning Incomplete implementation, return the number of sections
     return 1
   }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    // #warning Incomplete implementation, return the number of rows
     return 3
   }
   
   // MARK: - Actions
   @IBAction func logOutButton(_ sender: UIButton) {
-    FUser.logOutCurrentUser { (success) in
+    FUser.logOutCurrentUser { [weak self] (success) in
       if success {
-        self.showLoginView()
+        self!.showLoginView()
       }
     }
   }

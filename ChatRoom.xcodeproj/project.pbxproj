@@ -13,6 +13,11 @@
 		703057B621573A8200FEEAB4 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703057B521573A8200FEEAB4 /* ProfileTableViewController.swift */; };
 		703057B921580CAE00FEEAB4 /* Recent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703057B821580CAE00FEEAB4 /* Recent.swift */; };
 		703057BB2158B46700FEEAB4 /* RecentChatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703057BA2158B46700FEEAB4 /* RecentChatsTableViewCell.swift */; };
+		7057D051215E05C6000B9407 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7057D050215E05C6000B9407 /* ChatViewController.swift */; };
+		7057D053215E3371000B9407 /* JSQMessagesInputToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7057D052215E3371000B9407 /* JSQMessagesInputToolbar.swift */; };
+		7057D055215E7FA9000B9407 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7057D054215E7FA9000B9407 /* UIImage.swift */; };
+		7057D057215E8016000B9407 /* OutgoingMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7057D056215E8016000B9407 /* OutgoingMessages.swift */; };
+		7057D05A215F5799000B9407 /* IncomingMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7057D059215F5799000B9407 /* IncomingMessages.swift */; };
 		70801C7121510F070025DBD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70801C7021510F070025DBD5 /* AppDelegate.swift */; };
 		70801C7321510F070025DBD5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70801C7221510F070025DBD5 /* WelcomeViewController.swift */; };
 		70801C7621510F070025DBD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70801C7421510F070025DBD5 /* Main.storyboard */; };
@@ -37,6 +42,11 @@
 		703057B521573A8200FEEAB4 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		703057B821580CAE00FEEAB4 /* Recent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recent.swift; sourceTree = "<group>"; };
 		703057BA2158B46700FEEAB4 /* RecentChatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentChatsTableViewCell.swift; sourceTree = "<group>"; };
+		7057D050215E05C6000B9407 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		7057D052215E3371000B9407 /* JSQMessagesInputToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSQMessagesInputToolbar.swift; sourceTree = "<group>"; };
+		7057D054215E7FA9000B9407 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		7057D056215E8016000B9407 /* OutgoingMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutgoingMessages.swift; sourceTree = "<group>"; };
+		7057D059215F5799000B9407 /* IncomingMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingMessages.swift; sourceTree = "<group>"; };
 		70801C6D21510F070025DBD5 /* ChatRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70801C7021510F070025DBD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70801C7221510F070025DBD5 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +93,7 @@
 			children = (
 				703057AF2156916800FEEAB4 /* ChatsViewController.swift */,
 				703057BA2158B46700FEEAB4 /* RecentChatsTableViewCell.swift */,
+				7057D050215E05C6000B9407 /* ChatViewController.swift */,
 			);
 			path = "Chats View";
 			sourceTree = "<group>";
@@ -103,6 +114,15 @@
 				70801CA1215410CE0025DBD5 /* User Table View Cell */,
 			);
 			path = "Users View";
+			sourceTree = "<group>";
+		};
+		7057D058215F5711000B9407 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7057D056215E8016000B9407 /* OutgoingMessages.swift */,
+				7057D059215F5799000B9407 /* IncomingMessages.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		70801C6421510F070025DBD5 = {
@@ -127,6 +147,7 @@
 		70801C6F21510F070025DBD5 /* ChatRoom */ = {
 			isa = PBXGroup;
 			children = (
+				7057D058215F5711000B9407 /* Model */,
 				70801C9A215392AF0025DBD5 /* Extension */,
 				70801C9521526B940025DBD5 /* Helper */,
 				70801C89215239E30025DBD5 /* Configuration */,
@@ -191,6 +212,8 @@
 			isa = PBXGroup;
 			children = (
 				70801C9B215392DD0025DBD5 /* Notification.swift */,
+				7057D052215E3371000B9407 /* JSQMessagesInputToolbar.swift */,
+				7057D054215E7FA9000B9407 /* UIImage.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -302,32 +325,48 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ChatRoom/Pods-ChatRoom-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/DACircularProgress/DACircularProgress.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IDMPhotoBrowser/IDMPhotoBrowser.framework",
+				"${BUILT_PRODUCTS_DIR}/IQAudioRecorderController/IQAudioRecorderController.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SCSiriWaveformView/SCSiriWaveformView.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DACircularProgress.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IDMPhotoBrowser.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQAudioRecorderController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSiriWaveformView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -364,19 +403,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				70801C992152C4470025DBD5 /* FinishRegisterViewController.swift in Sources */,
+				7057D05A215F5799000B9407 /* IncomingMessages.swift in Sources */,
 				70801C8B21523A440025DBD5 /* Configuration.swift in Sources */,
+				7057D051215E05C6000B9407 /* ChatViewController.swift in Sources */,
 				70801C7321510F070025DBD5 /* WelcomeViewController.swift in Sources */,
 				70801C7121510F070025DBD5 /* AppDelegate.swift in Sources */,
 				70801CA3215411090025DBD5 /* UserTableViewCell.swift in Sources */,
 				70801C9C215392DD0025DBD5 /* Notification.swift in Sources */,
 				70801C94215269970025DBD5 /* CollectionReference.swift in Sources */,
 				70801C9021523D1C0025DBD5 /* Constants.swift in Sources */,
+				7057D057215E8016000B9407 /* OutgoingMessages.swift in Sources */,
 				703057B621573A8200FEEAB4 /* ProfileTableViewController.swift in Sources */,
 				703057BB2158B46700FEEAB4 /* RecentChatsTableViewCell.swift in Sources */,
 				703057AE2156806E00FEEAB4 /* UsersTableViewController.swift in Sources */,
 				703057B921580CAE00FEEAB4 /* Recent.swift in Sources */,
 				70801C9721526BA80025DBD5 /* Helper.swift in Sources */,
 				703057B02156916800FEEAB4 /* ChatsViewController.swift in Sources */,
+				7057D055215E7FA9000B9407 /* UIImage.swift in Sources */,
+				7057D053215E3371000B9407 /* JSQMessagesInputToolbar.swift in Sources */,
 				70801CA02153EE550025DBD5 /* SettingsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

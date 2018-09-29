@@ -170,15 +170,15 @@ class UsersTableViewController: UITableViewController {
     
     let query: Query = queryFrom(filter: filter)
     
-    query.getDocuments { (snapshot, error) in
-      self.allUsers = []
-      self.sectionTitleList = []
-      self.allUsersGroupped = [:]
+    query.getDocuments { [weak self] (snapshot, error) in
+      self!.allUsers = []
+      self!.sectionTitleList = []
+      self!.allUsersGroupped = [:]
       
       if error != nil {
         print("Load user query error: \(error!.localizedDescription)")
         ProgressHUD.dismiss()
-        self.tableView.reloadData()
+        self!.tableView.reloadData()
         return
       }
       
@@ -193,15 +193,15 @@ class UsersTableViewController: UITableViewController {
           let fuser = FUser(_dictionary: userDictionary)
           
           if fuser.objectId != FUser.currentId() {
-            self.allUsers.append(fuser)
+            self!.allUsers.append(fuser)
           }
         }
         
-        self.splitDataIntoSection()
-        self.tableView.reloadData()
+        self!.splitDataIntoSection()
+        self!.tableView.reloadData()
       }
       
-      self.tableView.reloadData()
+      self!.tableView.reloadData()
       ProgressHUD.dismiss()
     }
     

@@ -49,10 +49,10 @@ class RecentChatsTableViewCell: UITableViewCell {
     self.messageCountLabel.text = recentChat[kCOUNTER] as? String
     
     if let avatorString = recentChat[kAVATAR] {
-      imageFromData(pictureData: avatorString as! String) { (avatorImage) in
+      imageFromData(pictureData: avatorString as! String) { [weak self] (avatorImage) in
         
         if avatorImage != nil {
-          self.avatorImage.image = avatorImage?.circleMasked
+          self!.avatorImage.image = avatorImage?.circleMasked
         }
       }
     }

@@ -242,9 +242,38 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ian-sO-6wf">
                                 <rect key="frame" x="0.0" y="140" width="414" height="673"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="69H-Bt-8Jb" userLabel="Header View">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z6k-Fq-U33">
+                                            <rect key="frame" x="324" y="7.6666666666666679" width="82" height="30.000000000000004"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <state key="normal" title="New Group"/>
+                                            <connections>
+                                                <action selector="groupChat:" destination="mwH-ho-DyA" eventType="touchUpInside" id="BWU-Jb-qpI"/>
+                                            </connections>
+                                        </button>
+                                        <view alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VVM-dx-QFw" userLabel="Line View">
+                                            <rect key="frame" x="0.0" y="44.666666666666664" width="414" height="0.3333333333333357"/>
+                                            <color key="backgroundColor" red="0.69797700643539429" green="0.69807910919189453" blue="0.69795471429824829" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="0.5" id="tQO-kO-vnV"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="Z6k-Fq-U33" firstAttribute="centerY" secondItem="69H-Bt-8Jb" secondAttribute="centerY" id="CIg-Qw-OBq"/>
+                                        <constraint firstAttribute="bottom" secondItem="VVM-dx-QFw" secondAttribute="bottom" id="ISi-LE-ODT"/>
+                                        <constraint firstAttribute="trailing" secondItem="Z6k-Fq-U33" secondAttribute="trailing" constant="8" id="QDg-tq-Y86"/>
+                                        <constraint firstItem="VVM-dx-QFw" firstAttribute="width" secondItem="69H-Bt-8Jb" secondAttribute="width" id="gbh-ml-3eJ"/>
+                                        <constraint firstItem="VVM-dx-QFw" firstAttribute="centerX" secondItem="69H-Bt-8Jb" secondAttribute="centerX" id="oZH-5R-wx1"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RecentChatTableViewCell" id="IsX-3L-lsi" customClass="RecentChatsTableViewCell" customModule="ChatRoom" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
+                                        <rect key="frame" x="0.0" y="73" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IsX-3L-lsi" id="vkh-WD-UvS">
                                             <rect key="frame" x="0.0" y="0.0" width="376" height="99.666666666666671"/>
@@ -264,7 +293,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last message Last message Last message" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBK-Z0-7TX">
-                                                    <rect key="frame" x="93" y="48" width="237" height="41"/>
+                                                    <rect key="frame" x="93" y="48" width="198" height="41"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="41" id="qlp-wc-4pt"/>
                                                     </constraints>
@@ -273,10 +302,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OBy-6B-XD0" userLabel="Message Count Background View">
-                                                    <rect key="frame" x="338" y="53.666666666666657" width="30" height="30"/>
+                                                    <rect key="frame" x="299" y="53.666666666666657" width="30" height="30"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ltg-Oo-bz8">
-                                                            <rect key="frame" x="0.66666666666668561" y="5" width="29" height="20.333333333333332"/>
+                                                            <rect key="frame" x="0.66666666666668561" y="4.6666666666666714" width="29" height="20.666666666666668"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -291,7 +320,7 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="2018/09/20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="74C-eW-YNL">
-                                                    <rect key="frame" x="297" y="20.666666666666668" width="71" height="16.000000000000004"/>
+                                                    <rect key="frame" x="258" y="20.666666666666668" width="71" height="16.000000000000004"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -351,7 +380,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bHO-uy-wJ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4040.579710144928" y="-298.36956521739131"/>
+            <point key="canvasLocation" x="4040.579710144928" y="-298.66071428571428"/>
         </scene>
         <!--Settings-->
         <scene sceneID="H7G-8R-jMj">
@@ -497,6 +526,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yTu-zt-Qqh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5007" y="-297"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="hIc-BP-ozs">
+            <objects>
+                <viewController id="eFm-Tu-sr8" customClass="ChatViewController" customModule="ChatRoom" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hQR-XT-TAd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="5Vu-mM-dRS"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gnc-fM-Lzf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5987" y="-297"/>
         </scene>
         <!--Profile Table View Controller-->
         <scene sceneID="MSF-Vf-etY">
@@ -646,7 +690,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zJq-fO-5hf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5910" y="-297"/>
+            <point key="canvasLocation" x="5988" y="-974"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Eod-H1-Kpm">
@@ -707,9 +751,9 @@
     </scenes>
     <resources>
         <image name="avatarPlaceholder" width="101" height="101"/>
-        <image name="call" width="30" height="30"/>
-        <image name="chat" width="25" height="25"/>
-        <image name="message" width="30" height="30"/>
-        <image name="settings" width="25" height="25"/>
+        <image name="call" width="40" height="40"/>
+        <image name="chat" width="56.25" height="56.25"/>
+        <image name="message" width="40" height="40"/>
+        <image name="settings" width="56.25" height="56.25"/>
     </resources>
 </document>

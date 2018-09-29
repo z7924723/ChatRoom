@@ -42,7 +42,7 @@ class FinishRegisterViewController: UIViewController {
     
     if nameTextField.text != "" && surnameTextField.text != "" && countryTextField.text != "" && cityTextField.text != "" && phoneTextFiled.text != "" {
       
-      FUser.registerUserWith(email: email, password: password, firstName: nameTextField.text!, lastName: surnameTextField.text!) { (error) in
+      FUser.registerUserWith(email: email, password: password, firstName: nameTextField.text!, lastName: surnameTextField.text!) { [weak self] (error) in
         if error != nil {
           ProgressHUD.showError(error!.localizedDescription)
           print("Error: \(error!.localizedDescription)")
@@ -50,7 +50,7 @@ class FinishRegisterViewController: UIViewController {
         }
         
         ProgressHUD.dismiss()
-        self.registerUser()
+        self!.registerUser()
       }
     } else {
       ProgressHUD.showError("All fields are required!")
@@ -68,12 +68,13 @@ class FinishRegisterViewController: UIViewController {
                                       kPHONE: phoneTextFiled.text!] as [String: Any]
     
     if avatorImage == nil {
-      imageFromInitials(firstName: nameTextField.text!, lastName: surnameTextField.text!) { (initAvatorImage) in
+      imageFromInitials(firstName: nameTextField.text!, lastName: surnameTextField.text!) {
+        [weak self] (initAvatorImage) in
         let avatorImage = initAvatorImage.jpegData(compressionQuality: 0.7)
         let avator = avatorImage!.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
         
         tempDictionary[kAVATAR] = avator
-        self.finishRegisteration(withValue: tempDictionary)
+        self!.finishRegisteration(withValue: tempDictionary)
       }
     } else {
       let avatorData = avatorImage!.jpegData(compressionQuality: 0.7)
@@ -94,6 +95,7 @@ class FinishRegisterViewController: UIViewController {
         
         return
       }
+      
       ProgressHUD.dismiss()
       self.goToChatRoom()
     }

@@ -41,9 +41,9 @@ class UserTableViewCell: UITableViewCell {
     self.fullNameLabel.text = fuser.fullname
     
     if fuser.avatar != "" {
-      imageFromData(pictureData: fuser.avatar) { (avatorImage) in
+      imageFromData(pictureData: fuser.avatar) { [weak self] (avatorImage) in
         if avatorImage != nil {
-          self.avatorImage.image = avatorImage!.circleMasked
+          self!.avatorImage.image = avatorImage!.circleMasked
         }
       }
     }

@@ -14,6 +14,7 @@ public var recentBadgeHandler: ListenerRegistration?
 let userDefaults = UserDefaults.standard
 
 public let dateLength = 14
+public let limitMessages = 11
 
 // IDS and Keys
 public let kFILEREFERENCE = ""

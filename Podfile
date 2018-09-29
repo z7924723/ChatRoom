@@ -12,6 +12,10 @@ target 'ChatRoom' do
 
   pod 'ProgressHUD'
 
+  pod 'JSQMessagesViewController', ‘7.3.3’
+  pod 'IQAudioRecorderController'
+  pod 'IDMPhotoBrowser'
+
   # Pods for ChatRoom
 
 end
