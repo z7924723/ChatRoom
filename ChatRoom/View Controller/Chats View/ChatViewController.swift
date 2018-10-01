@@ -21,6 +21,9 @@ class ChatViewController: JSQMessagesViewController {
   var memberIds: [String]!
   var membersToPush: [String]!
   var titleName: String!
+  var isGroup: Bool?
+  var group: NSDictionary?
+  var withUsers: [FUser] = []
   
   var outgoingBubble = JSQMessagesBubbleImageFactory()?.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleRed())
   var incomingBubble = JSQMessagesBubbleImageFactory()?.incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleLightGray())
@@ -42,6 +45,30 @@ class ChatViewController: JSQMessagesViewController {
   
   let legitTypes = [kAUDIO, kPICTURE, kTEXT, kLOCATION, kVIDEO]
   
+  let leftBarButtonView: UIView = {
+    let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 44))
+    return view
+  }()
+  
+  let avatorButton: UIButton = {
+    let button = UIButton(frame: CGRect(x: 0, y: 10, width: 25, height: 25))
+    return button
+  }()
+  
+  let titleLabel: UILabel = {
+    let title = UILabel(frame: CGRect(x: 30, y: 10, width: 140, height: 15))
+    title.textAlignment = .left
+    title.font = UIFont(name: title.font.fontName, size: 14)
+    return title
+  }()
+  
+  let subTitleLabel: UILabel = {
+    let subTitle = UILabel(frame: CGRect(x: 30, y: 25, width: 140, height: 15))
+    subTitle.textAlignment = .left
+    subTitle.font = UIFont(name: subTitle.font.fontName, size: 14)
+    return subTitle
+  }()
+  
   // MARK: - View Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -56,21 +83,71 @@ class ChatViewController: JSQMessagesViewController {
   }
   
   // MARK: - Helper
-  private func customView() {
+  private final func customView() {
     self.navigationItem.largeTitleDisplayMode = .never
     self.navigationItem.leftBarButtonItems = [UIBarButtonItem(image: UIImage(named: "Back"), style: .plain, target: self, action: #selector(self.backAction))]
     
     collectionView.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
     collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
+    
+    customNavigationItem()
+  }
+  
+  private final func customNavigationItem() {
+    let infoBarButton = UIBarButtonItem(image: UIImage(named: "info"), style: .plain, target: self, action: #selector(self.infoButtonPressed))
+    
+    leftBarButtonView.addSubview(avatorButton)
+    leftBarButtonView.addSubview(titleLabel)
+    leftBarButtonView.addSubview(subTitleLabel)
+    let leftBarButton = UIBarButtonItem(customView: leftBarButtonView)
+    
+    self.navigationItem.rightBarButtonItem = infoBarButton
+    self.navigationItem.leftBarButtonItems?.append(leftBarButton)
+    
+    if isGroup! {
+      avatorButton.addTarget(self, action: #selector(self.showGroup), for: .touchUpInside)
+    } else {
+      avatorButton.addTarget(self, action: #selector(self.showUserProfile), for: .touchUpInside)
+    }
+    
+    getUsersFromFirestore(withIds: memberIds) { [weak self] (withUsers) in
+      
+      guard let self = self else { return }
+      
+      self.withUsers = withUsers
+      
+      // Get avator
+      if !(self.isGroup!) {
+        self.setUIForSingleChat()
+      }
+    }
+  }
+  
+  private final func setUIForSingleChat() {
+    let withUser = withUsers.first!
+    
+    imageFromData(pictureData: withUser.avatar) { (image) in
+      
+      if image != nil {
+        avatorButton.setImage(image!.circleMasked, for: .normal)
+      }
+      
+    }
+    
+    titleLabel.text = withUser.fullname
+    
+    if withUser.isOnline {
+      subTitleLabel.text = "Online"
+    } else {
+      subTitleLabel.text = "Offline"
+    }
+    
+    avatorButton.addTarget(self, action: #selector(self.showUserProfile), for: .touchUpInside)
   }
   
   private func customSendButton() {
     self.inputToolbar.contentView.rightBarButtonItem.setImage(UIImage(named: "mic"), for: .normal)
     self.inputToolbar.contentView.rightBarButtonItem.setTitle("", for: .normal)
-  }
-  
-  @objc func backAction() {
-    self.navigationController?.popViewController(animated: true)
   }
   
   private func loadMessages() {
@@ -280,6 +357,26 @@ class ChatViewController: JSQMessagesViewController {
     
   }
   
+  // MARK: - Actions
+  @objc func backAction() {
+    self.navigationController?.popViewController(animated: true)
+  }
+  
+  @objc func infoButtonPressed() {
+    print("show picture")
+  }
+  
+  @objc func showGroup() {
+    print("show Group")
+  }
+  
+  @objc func showUserProfile() {
+    let profileVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileTableView") as! ProfileTableViewController
+    
+    profileVC.user = withUsers.first!
+    
+    self.navigationController?.pushViewController(profileVC, animated: true)
+  }
 }
 
 extension ChatViewController {

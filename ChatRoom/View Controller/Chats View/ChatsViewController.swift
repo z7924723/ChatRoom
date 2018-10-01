@@ -182,6 +182,7 @@ extension ChatsViewController: UITableViewDelegate {
     chatVC.memberIds = (recent[kMEMBERS] as? [String])!
     chatVC.membersToPush = (recent[kMEMBERSTOPUSH] as? [String])!
     chatVC.titleName = (recent[kWITHUSERFULLNAME] as? String)!
+    chatVC.isGroup = (recent[kTYPE] as! String) == kGROUP
     
     navigationController?.pushViewController(chatVC, animated: true)
 
